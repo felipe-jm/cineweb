@@ -40,9 +40,6 @@ Para iniciar o projeto, basta acessar [http://localhost/cineweb](http://localhos
 
 #### Estrutura geral
 
-The application's URL-path translates directly to the controllers (=files) and their methods inside
-application/controllers.
-
 As URLs da aplicação estão ligadas diretamente aos métodos de seu controller em [./application/controllers](./application/controllers)
 
 `exemplo.com/home/exampleOne` irá realizar o que _exampleOne()_ executa em [./application/controllers/home.php](./application/controllers/home.php)
