@@ -1,0 +1,9 @@
+{
+  "name": "cine/web",
+  "type": "project",
+  "description": "Um gerenciador de cinemas",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.0"
+  }
+}
