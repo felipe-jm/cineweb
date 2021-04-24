@@ -64,7 +64,7 @@ public function exampleOne()
 
 #### Trabalhando com dados do banco
 
-Para realiar operações sobre dados de um certo model, cujo as funções estão em [./application/model/model.php](./application/model/model.php), basta dentro do controller utilizar **$this->model->{nome da função desejada}();**
+Para realizar operações sobre dados de um certo model, cujo as funções estão em [./application/model/model.php](./application/model/model.php), basta dentro do controller utilizar **$this->model->{nome da função desejada}();**
 
 ```php
 public function index()
