@@ -13,29 +13,24 @@ class Application
         $this->getUrlWithoutModRewrite();
 
         if (!$this->url_controller) {
-
             require APP . 'controllers/home.php';
             $page = new Home();
             $page->index();
-
         } elseif (file_exists(APP . 'controllers/' . $this->url_controller . '.php')) {
-
             require APP . 'controllers/' . $this->url_controller . '.php';
             $this->url_controller = new $this->url_controller();
 
             if (method_exists($this->url_controller, $this->url_action)) {
 
-                if(!empty($this->url_params)) {
+                if (!empty($this->url_params)) {
                     call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
                 } else {
                     $this->url_controller->{$this->url_action}();
                 }
-
             } else {
-                if(strlen($this->url_action) == 0) {
+                if (strlen($this->url_action) == 0) {
                     $this->url_controller->index();
-                }
-                else {
+                } else {
                     require APP . 'controllers/error_page.php';
                     $page = new ErrorPage();
                     $page->index();
@@ -48,13 +43,13 @@ class Application
         }
     }
 
- 
+
     private function getUrlWithoutModRewrite()
     {
         $url = explode('/', $_SERVER['REQUEST_URI']);
-      
+
         $url = array_diff($url, array('', 'index.php'));
-        
+
         $url = array_values($url);
 
         if (defined('URL_SUB_FOLDER') && !empty($url[0]) && $url[0] === URL_SUB_FOLDER) {
@@ -70,8 +65,8 @@ class Application
         $this->url_params = array_values($url);
 
         // Para debug descomentar
-        //echo 'Controller: ' . $this->url_controller . '<br>';
-        //echo 'Action: ' . $this->url_action . '<br>';
-        //echo 'Parameters: ' . print_r($this->url_params, true) . '<br>';
+        // echo 'Controller: ' . $this->url_controller . '<br>';
+        // echo 'Action: ' . $this->url_action . '<br>';
+        // echo 'Parameters: ' . print_r($this->url_params, true) . '<br>';
     }
 }

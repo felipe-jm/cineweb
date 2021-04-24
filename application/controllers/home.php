@@ -16,14 +16,14 @@ class Home extends Controller
     }
 
     /**
-     * PAGE: exampleone
-     * Este método é acessado ao acessar -> http://localhost/home/exampleone
+     * PAGE: cidades
+     * Este método é acessado ao acessar -> http://localhost/home/cidades
      */
-    public function exampleOne()
+    public function cidades()
     {
         // load views
         require APP . 'views/_templates/header.php';
-        require APP . 'views/home/example_one.php';
+        require APP . 'views/home/cidades.php';
         require APP . 'views/_templates/footer.php';
     }
 }

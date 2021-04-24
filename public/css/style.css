@@ -1,28 +1,135 @@
-html,
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+
+  --gray: #e5e5e5;
+
+  --red: #e02041;
+  --black: #000;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
 
 body {
-  font-size: 15px;
+  background: var(--white);
+  color: var(--black);
 }
 
-table {
-  font-size: 13px;
+body,
+input,
+select,
+textarea,
+button {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.headerContainer {
+  height: 5rem;
+  background: var(--gray);
+}
+
+.headerContent {
+  max-width: 1120px;
+  padding: 0 2rem;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  max-height: 100%;
+}
+
+.headerContent img {
+  height: 256px;
+  width: 256px;
 }
 
 .container {
-  border: 3px solid #000;
-  padding: 20px;
-  margin: 10px;
+  width: 100%;
+  max-width: 1120px;
+  padding: 2rem;
+  margin: 0 auto;
+
+  flex: 1 0 auto;
 }
 
-.where-are-we-box {
-  position: relative;
-  left: -20px;
-  top: -20px;
-  background-color: #bbb;
-  padding: 10px 15px;
-  display: inline-block;
+.footer {
+  height: 5rem;
+  background: var(--gray);
+}
+
+.btn {
+  border: 0;
+  background-color: var(--red);
+  color: var(--white);
+
+  text-align: center;
+
+  border-radius: 0.5rem;
+
+  transition: filter 0.2s;
+}
+
+.btn:hover {
+  filter: brightness(0.8);
+}
+
+/* Home */
+
+.optionsWrapper {
+  width: 100%;
+
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.homeBtn {
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+}
+
+/* Cidades */
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
 }
