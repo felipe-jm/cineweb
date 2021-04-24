@@ -94,10 +94,9 @@ a {
   background-color: var(--red);
   color: var(--white);
 
-  padding: 2rem 1rem;
-  border-radius: 0.5rem;
+  text-align: center;
 
-  font-size: 1.5rem;
+  border-radius: 0.5rem;
 
   transition: filter 0.2s;
 }
@@ -116,4 +115,21 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.homeBtn {
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+}
+
+/* Cidades */
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
 }

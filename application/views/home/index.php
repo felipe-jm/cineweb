@@ -6,33 +6,33 @@
     <div>
         <h2>Escolha uma das opções:</h2>
         <div class="optionsWrapper">
-            <button class="btn">
+            <a class="btn homeBtn" href="<?php echo URL_WITH_INDEX_FILE; ?>/cidades">
                 Cidades
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Filmes
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Equipe
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Comidas
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Unidades
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Combos
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Clientes
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Promoções
-            </button>
-            <button class="btn">
+            </a>
+            <a class="btn homeBtn">
                 Sessões
-            </button>
+            </a>
         </div>
     </div>
 </div>
