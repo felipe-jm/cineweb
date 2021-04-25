@@ -1,5 +1,7 @@
 <?php
 
+require_once APP . 'models/song.php';
+
 /**
  * Class Songs
  * This is a demo class.
@@ -9,7 +11,7 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Songs extends Controller
+class Songs
 {
     /**
      * PAGE: index
@@ -18,10 +20,10 @@ class Songs extends Controller
     public function index()
     {
         // getting all songs and amount of songs
-        $songs = $this->model->getAllSongs();
-        $amount_of_songs = $this->model->getAmountOfSongs();
+        $songs = Song::getAllSongs();
+        $amount_of_songs = Song::getAmountOfSongs();
 
-       // load views. within the views we can echo out $songs and $amount_of_songs easily
+        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'views/_templates/header.php';
         require APP . 'views/songs/index.php';
         require APP . 'views/_templates/footer.php';
@@ -40,7 +42,7 @@ class Songs extends Controller
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_add_song"])) {
             // do addSong() in model/model.php
-            $this->model->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
+            Song::addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
         }
 
         // where to go after song has been added
@@ -61,14 +63,14 @@ class Songs extends Controller
         // if we have an id of a song that should be deleted
         if (isset($song_id)) {
             // do deleteSong() in model/model.php
-            $this->model->deleteSong($song_id);
+            Song::deleteSong($song_id);
         }
 
         // where to go after song has been deleted
         header('location: ' . URL_WITH_INDEX_FILE . 'songs/index');
     }
 
-     /**
+    /**
      * ACTION: editSong
      * This method handles what happens when you move to http://yourproject/songs/editsong
      * @param int $song_id Id of the to-edit song
@@ -78,7 +80,7 @@ class Songs extends Controller
         // if we have an id of a song that should be edited
         if (isset($song_id)) {
             // do getSong() in model/model.php
-            $song = $this->model->getSong($song_id);
+            $song = Song::getSong($song_id);
 
             // in a real application we would also check if this db entry exists and therefore show the result or
             // redirect the user to an error page or similar
@@ -92,7 +94,7 @@ class Songs extends Controller
             header('location: ' . URL_WITH_INDEX_FILE . 'songs/index');
         }
     }
-    
+
     /**
      * ACTION: updateSong
      * This method handles what happens when you move to http://yourproject/songs/updatesong
@@ -106,7 +108,7 @@ class Songs extends Controller
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_update_song"])) {
             // do updateSong() from model/model.php
-            $this->model->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
+            Song::updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
         }
 
         // where to go after song has been added
@@ -119,10 +121,9 @@ class Songs extends Controller
      */
     public function ajaxGetStats()
     {
-        $amount_of_songs = $this->model->getAmountOfSongs();
+        $amount_of_songs = Song::getAmountOfSongs();
 
         // simply echo out something. A super-simple API would be possible by echoing JSON here
         echo $amount_of_songs;
     }
-
 }
