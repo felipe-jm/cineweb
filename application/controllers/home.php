@@ -1,7 +1,7 @@
 <?php
 
 
-class Home extends Controller
+class Home
 {
     /**
      * PAGE: index

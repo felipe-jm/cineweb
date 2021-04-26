@@ -1,7 +1,7 @@
 <?php
 
 
-class Cidades extends Controller
+class Cidades
 {
   /**
    * PAGE: index

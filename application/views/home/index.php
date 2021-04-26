@@ -4,7 +4,7 @@
 
 <div class="container">
     <div>
-        <h2>Escolha uma das opções:</h2>
+        <h2>Olá! Escolha uma das opções:</h2>
         <div class="optionsWrapper">
             <a class="btn homeBtn" href="<?php echo URL_WITH_INDEX_FILE; ?>/cidades">
                 Cidades
