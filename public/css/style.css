@@ -15,7 +15,7 @@
 
 @media (max-width: 1080px) {
   html {
-    font-size: 93.75%;
+    font-size: 100%;
   }
 }
 
@@ -122,14 +122,51 @@ a {
   font-size: 1.5rem;
 }
 
+
 /* Cidades */
+
+.acoes{
+  width: 2rem;
+}
 
 table {
   width: 100%;
+  
 }
 
 table,
 th,
 td {
-  border: 1px solid black;
+  border: 0px solid rgb(223, 39, 39);
+  border-collapse: separate;
+  border-spacing: 0 15px;
+
+}
+td{
+  background-color: #e5e5e5;
+  padding: 10px;
+}
+td:first-child {
+  border-left-style: solid;
+  border-top-left-radius: 10px; 
+  border-bottom-left-radius: 10px;
+}
+td:last-child {
+  border-right-style: solid;
+  border-bottom-right-radius: 10px; 
+  border-top-right-radius: 10px; 
+}
+button  {
+  border: none;
+  float: right;
+  border-radius: 10px;
+  margin: 15px;
+  background-color: #e02041;
+  width: 100px;
+  height: 50px;
+}
+.botoes{
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
 }
