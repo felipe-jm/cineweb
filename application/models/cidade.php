@@ -77,10 +77,10 @@ class Cidade extends Model
    * @param string $nome
    * @param int $cidade_id
    */
-  public static function updateSong($nome, $cidade_id)
+  public static function update($nome, $cidade_id)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE cidades SET nome = :nome, track = :track, link = :link WHERE id = :cidade_id";
+    $sql = "UPDATE cidades SET nome = :nome WHERE id = :cidade_id";
     $query = $connection->prepare($sql);
     $parameters = array(':nome' => $nome, ':cidade_id' => $cidade_id);
 
