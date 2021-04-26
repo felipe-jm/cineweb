@@ -61,12 +61,12 @@ class Funcionario extends Model
     $query->execute($parameters);
   }
 
-  public static function get($cidade_id)
+  public static function get($funcionario_id)
   {
     $connection = Connection::getConnection();
-    $sql = "SELECT * FROM funcionarios WHERE id = :cidade_id LIMIT 1";
+    $sql = "SELECT * FROM funcionarios WHERE id = :funcionario_id LIMIT 1";
     $query = $connection->prepare($sql);
-    $parameters = array(':cidade_id' => $cidade_id);
+    $parameters = array(':funcionario_id' => $funcionario_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
