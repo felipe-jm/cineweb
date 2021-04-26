@@ -4,22 +4,22 @@ require_once APP . 'core/model.php';
 require_once APP . 'database/connection.php';
 
 /**
- * - Combo
+ * - Comida
  *
  * @property int id
  * @property string nome
  * @property int unidade_id
  */
 
-class Combo extends Model
+class Comida extends Model
 {
   /**
-   * Retorna todos as combos
+   * Retorna todos as comidas
    */
   public static function all()
   {
     $connection = Connection::getConnection();
-    $sql = "SELECT * FROM combos";
+    $sql = "SELECT * FROM comidas";
     $query = $connection->prepare($sql);
     $query->execute();
 
@@ -33,7 +33,7 @@ class Combo extends Model
   public static function add($nome, $unidade_id)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO combos (nome, unidade_id) VALUES (:nome, :unidade_id)";
+    $sql = "INSERT INTO comidas (nome, unidade_id) VALUES (:nome, :unidade_id)";
     $query = $connection->prepare($sql);
     $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id);
 
@@ -49,7 +49,7 @@ class Combo extends Model
   public static function delete($comida_id)
   {
     $connection = Connection::getConnection();
-    $sql = "DELETE FROM combos WHERE id = :comida_id";
+    $sql = "DELETE FROM comidas WHERE id = :comida_id";
     $query = $connection->prepare($sql);
     $parameters = array(':comida_id' => $comida_id);
 
@@ -62,7 +62,7 @@ class Combo extends Model
   public static function get($comida_id)
   {
     $connection = Connection::getConnection();
-    $sql = "SELECT * FROM combos WHERE id = :comida_id LIMIT 1";
+    $sql = "SELECT * FROM comidas WHERE id = :comida_id LIMIT 1";
     $query = $connection->prepare($sql);
     $parameters = array(':comida_id' => $comida_id);
 
@@ -83,7 +83,7 @@ class Combo extends Model
   public static function update($nome, $unidade_id, $comida_id)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE combos SET nome = :nome,unidade_id = :unidade_id WHERE id = :comida_id";
+    $sql = "UPDATE comidas SET nome = :nome,unidade_id = :unidade_id WHERE id = :comida_id";
     $query = $connection->prepare($sql);
     $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id, ':comida_id' => $comida_id);
 
