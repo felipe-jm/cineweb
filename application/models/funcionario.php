@@ -83,7 +83,7 @@ class Funcionario extends Model
    * @param int $unidade_id
    * @param int $funcionario_id
    */
-  public static function updateSong($nome, $cpf, $unidade_id, $funcionario_id)
+  public static function update($nome, $cpf, $unidade_id, $funcionario_id)
   {
     $connection = Connection::getConnection();
     $sql = "UPDATE funcionarios SET nome = :nome, cpf = :cpf, unidade_id = :unidade_id WHERE id = :funcionario_id";
