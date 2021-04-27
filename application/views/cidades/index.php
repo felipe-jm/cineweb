@@ -2,10 +2,12 @@
   exit(header('HTTP/1.0 403 Forbidden'));
 } ?>
 
-<div class="container" style="position: relative">
+<div class="container">
+  <h2>Cidades</h2>
+
   <div>
     <table>
-  
+
       <tbody>
         <tr>
           <td>
@@ -33,8 +35,11 @@
     </table>
   </div>
   <div class="botoes">
-   <!-- <button class="btn"><i class="fa fa-home"></i> Home</button> -->
-    <button type="button">Novo</button> 
-    <button type="button">Voltar</button> 
+    <a id="voltar" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>">
+      Voltar
+    </a>
+    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>cidades/criar">
+      Novo
+    </a>
   </div>
 </div>

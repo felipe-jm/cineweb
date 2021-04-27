@@ -3,9 +3,11 @@
 } ?>
 
 <div class="container" style="position: relative">
+  <h2>Combos</h2>
+
   <div>
     <table>
-  
+
       <tbody>
         <tr>
           <td>
@@ -33,8 +35,11 @@
     </table>
   </div>
   <div class="botoes">
-   <!-- <button class="btn"><i class="fa fa-home"></i> Home</button> -->
-    <button type="button">Novo</button> 
-    <button type="button">Voltar</button> 
+    <a id="voltar" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>">
+      Voltar
+    </a>
+    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>criar">
+      Novo
+    </a>
   </div>
 </div>
