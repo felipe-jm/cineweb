@@ -2,7 +2,7 @@
   exit(header('HTTP/1.0 403 Forbidden'));
 } ?>
 
-<div class="container" style="position: relative">
+<div class="container">
   <h2>Unidades</h2>
 
   <div>
@@ -38,7 +38,7 @@
     <a id="voltar" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>">
       Voltar
     </a>
-    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>criar">
+    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>unidades/criar">
       Novo
     </a>
   </div>
