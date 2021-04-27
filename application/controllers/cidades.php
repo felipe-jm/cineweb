@@ -17,7 +17,7 @@ class Cidades
   }
 
   /**
-   * PAGE: index
+   * PAGE: criar
    * Este método é acessado ao acessar -> http://localhost/cineweb/index.php/cidades/criar
    */
   public function criar()
@@ -29,8 +29,8 @@ class Cidades
   }
 
   /**
-   * ACTION: novo
-   * Este método é executado ao realizar o submit de um formulário com a action cidades/novo
+   * ACTION: criarCidade
+   * Este método é executado ao realizar o submit de um formulário com a action cidades/criarCidade
    */
   public function criarCidade()
   {

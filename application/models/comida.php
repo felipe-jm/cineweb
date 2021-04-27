@@ -4,14 +4,14 @@ require_once APP . 'core/model.php';
 require_once APP . 'database/connection.php';
 
 /**
- * - Combo
+ * - Comida
  *
  * @property int id
  * @property string nome
  * @property int unidade_id
  */
 
-class Combo extends Model
+class Comida extends Model
 {
   /**
    * Retorna todos as combos

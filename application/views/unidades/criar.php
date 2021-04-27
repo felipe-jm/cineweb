@@ -3,19 +3,19 @@
 } ?>
 
 <div class="container">
-  <h2>Criar cidade</h2>
+  <h2>Criar unidade</h2>
 
-  <form action="<?php echo URL_WITH_INDEX_FILE; ?>cidades/criarCidade" method="POST">
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>unidades/criarUnidade" method="POST">
     <label for="nome">
       Nome
       <input id="nome" class="input" type="text" name="nome" required>
     </label>
 
     <div class="botoes">
-      <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>cidades">
+      <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>unidades">
         Cancelar
       </a>
-      <input class="btn submitBtn" type="submit" name="criarCidade" value="Salvar" />
+      <input class="btn submitBtn" type="submit" name="criarUnidade" value="Salvar" />
     </div>
   </form>
 </div>
