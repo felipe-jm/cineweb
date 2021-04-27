@@ -29,7 +29,7 @@ class Funcionarios
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarFuncionario
    * Este método é executado ao realizar o submit de um formulário com a action funcionarios/criarFuncionario
    */
   public function criarFuncionario()

@@ -29,7 +29,7 @@ class Filmes
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarFilme
    * Este método é executado ao realizar o submit de um formulário com a action filmes/criarFilme
    */
   public function criarFilme()

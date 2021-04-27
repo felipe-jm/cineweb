@@ -1,5 +1,6 @@
 <?php
 
+require_once APP . 'models/comida.php';
 
 class Comidas
 {
@@ -28,14 +29,14 @@ class Comidas
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarComida
    * Este método é executado ao realizar o submit de um formulário com a action comidas/criarComida
    */
   public function criarComida()
   {
-    // Se tiver dados no POST cria nova cidade
+    // Se tiver dados no POST cria nova comida
     if (isset($_POST['criarComida'])) {
-      Cidade::add($_POST['nome']);
+      Comida::add($_POST['nome'], $_POST['unidade_id']);
     }
 
     // redireciona após criação
@@ -50,8 +51,8 @@ class Comidas
   public function editar($comida_id)
   {
     if (isset($comida_id)) {
-      // load cidade
-      $cidade = Cidade::get($comida_id);
+      // load comida
+      $comida = Comida::get($comida_id);
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -69,9 +70,9 @@ class Comidas
    */
   public function editarComida()
   {
-    // Se tiver dados no POST cria nova cidade
+    // Se tiver dados no POST cria nova comida
     if (isset($_POST['editarComida'])) {
-      Cidade::update($_POST['nome'], $_POST['comida_id']);
+      Comida::update($_POST['nome'], $_POST['unidade_id'], $_POST['comida_id']);
     }
 
     // redireciona após criação

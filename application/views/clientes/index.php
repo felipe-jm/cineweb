@@ -2,7 +2,7 @@
   exit(header('HTTP/1.0 403 Forbidden'));
 } ?>
 
-<div class="container" style="position: relative">
+<div class="container">
   <h2>Clientes</h2>
 
   <div>

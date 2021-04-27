@@ -29,7 +29,7 @@ class Promocoes
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarPromocao
    * Este método é executado ao realizar o submit de um formulário com a action promocoes/criarPromocao
    */
   public function criarPromocao()

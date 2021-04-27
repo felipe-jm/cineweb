@@ -17,7 +17,7 @@ class Assentos
   }
 
   /**
-   * PAGE: index
+   * PAGE: criar
    * Este método é acessado ao acessar -> http://localhost/cineweb/index.php/assentos/criar
    */
   public function criar()
@@ -29,7 +29,7 @@ class Assentos
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarAssento
    * Este método é executado ao realizar o submit de um formulário com a action assentos/criarAssento
    */
   public function criarAssento()
@@ -51,8 +51,8 @@ class Assentos
   public function editar($assento_id)
   {
     if (isset($assento_id)) {
-      // load cidade
-      $cidade = Assento::get($assento_id);
+      // load assento
+      $assento = Assento::get($assento_id);
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -70,7 +70,7 @@ class Assentos
    */
   public function editarAssento()
   {
-    // Se tiver dados no POST cria nova cidade
+    // Se tiver dados no POST cria novo assento
     if (isset($_POST['editarAssento'])) {
       Assento::update($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['assento_id']);
     }

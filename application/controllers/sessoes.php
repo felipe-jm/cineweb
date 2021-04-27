@@ -29,7 +29,7 @@ class Sessoes
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarSessao
    * Este método é executado ao realizar o submit de um formulário com a action sessoes/criarSessao
    */
   public function criarSessao()

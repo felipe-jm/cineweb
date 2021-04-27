@@ -29,7 +29,7 @@ class Unidades
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarUnidade
    * Este método é executado ao realizar o submit de um formulário com a action unidades/criarUnidade
    */
   public function criarUnidade()

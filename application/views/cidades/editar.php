@@ -3,7 +3,7 @@
 } ?>
 
 <div class="container">
-  <h2>Criar cidade</h2>
+  <h2>Editar cidade</h2>
 
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>cidades/editarCidade" method="POST">
     <label for="nome">

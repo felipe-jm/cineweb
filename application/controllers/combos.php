@@ -29,7 +29,7 @@ class Combos
   }
 
   /**
-   * ACTION: novo
+   * ACTION: criarCombo
    * Este método é executado ao realizar o submit de um formulário com a action combos/criarCombo
    */
   public function criarCombo()
