@@ -2,7 +2,7 @@
   exit(header('HTTP/1.0 403 Forbidden'));
 } ?>
 
-<div class="container" style="position: relative">
+<div class="container">
   <h2>Sessões</h2>
 
   <div>
@@ -35,11 +35,11 @@
     </table>
   </div>
   <div class="botoes">
-    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>criar">
-      Novo
-    </a>
     <a id="voltar" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>">
       Voltar
+    </a>
+    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>sessoes/criar">
+      Novo
     </a>
   </div>
 </div>
