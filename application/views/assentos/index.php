@@ -38,7 +38,7 @@
     <a id="voltar" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>">
       Voltar
     </a>
-    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>criar">
+    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>assentos/criar">
       Novo
     </a>
   </div>
