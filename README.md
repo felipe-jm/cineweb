@@ -70,9 +70,9 @@ Para realizar operações sobre dados de um certo model, cujo as funções estã
 public function index()
 {
     // pegando todos os filmes
-    $movies = $this->model->getAllMovies();
+    $filmes = Filme::all();
 
-   // assim dentro das seguintes views pode-se acessar $movies
+   // assim dentro das seguintes views pode-se acessar $filmes
     require APP . 'views/_templates/header.php';
     require APP . 'views/songs/index.php';
     require APP . 'views/_templates/footer.php';
@@ -82,24 +82,25 @@ public function index()
 Atualmente, a manipulação de dados ocorre somente em [./application/model/model.php](./application/model/model.php) utilizando PDO. Exemplo:
 
 ```php
-public function getAllMovies()
+public function all()
 {
+    $connection = Connection::getConnection();
     $sql = "SELECT id, nome, duracao FROM filmes";
-    $query = $this->db->prepare($sql);
+    $query = $connection->prepare($sql);
     $query->execute();
 
     return $query->fetchAll();
 }
 ```
 
-O resultado ($movies) pode ser utilizado entro das views:
+O resultado ($filmes) pode ser utilizado entro das views:
 
 ```php
 <tbody>
-<?php foreach ($movies as $movie) { ?>
+<?php foreach ($filmes as $filme) { ?>
     <tr>
-        <td><?php if (isset($movie->nome)) echo htmlspecialchars($movie->nome, ENT_QUOTES, 'UTF-8'); ?></td>
-        <td><?php if (isset($movie->duracao)) echo htmlspecialchars($movie->duracao, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?php if (isset($filme->nome)) echo htmlspecialchars($filme->nome, ENT_QUOTES, 'UTF-8'); ?></td>
+        <td><?php if (isset($filme->duracao)) echo htmlspecialchars($filme->duracao, ENT_QUOTES, 'UTF-8'); ?></td>
     </tr>
 <?php } ?>
 </tbody>

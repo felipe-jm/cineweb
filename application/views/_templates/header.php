@@ -28,6 +28,8 @@ if (!$this) {
     <div class="wrapper">
         <header class="headerContainer">
             <div class="headerContent">
-                <img src="<?php echo URL; ?>public/img/logo_transparent.png" alt="Cineweb logo">
+                <a href="<?php echo URL_WITH_INDEX_FILE; ?>">
+                    <img src="<?php echo URL; ?>public/img/logo_transparent.png" alt="Cineweb logo">
+                </a>
             </div>
         </header>

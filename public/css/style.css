@@ -81,6 +81,8 @@ a {
   padding: 2rem;
   margin: 0 auto;
 
+  position: relative;
+
   flex: 1 0 auto;
 }
 
@@ -96,6 +98,10 @@ a {
 
   text-align: center;
 
+  padding: 1rem 2rem;
+
+  min-width: 10rem;
+
   border-radius: 0.5rem;
 
   transition: filter 0.2s;
@@ -103,6 +109,36 @@ a {
 
 .btn:hover {
   filter: brightness(0.8);
+}
+
+.input {
+  padding: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  outline: none;
+  border: 0;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+label input {
+  margin-top: 0.5rem;
 }
 
 /* Home */
@@ -122,51 +158,58 @@ a {
   font-size: 1.5rem;
 }
 
-
 /* Cidades */
 
-.acoes{
+.acoes {
   width: 2rem;
 }
 
 table {
   width: 100%;
-  
 }
 
 table,
 th,
 td {
-  border: 0px solid rgb(223, 39, 39);
+  border: 0px;
   border-collapse: separate;
   border-spacing: 0 15px;
-
 }
-td{
-  background-color: #e5e5e5;
+
+td {
+  background-color: var(--gray);
   padding: 10px;
 }
+
 td:first-child {
   border-left-style: solid;
-  border-top-left-radius: 10px; 
+  border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 td:last-child {
   border-right-style: solid;
-  border-bottom-right-radius: 10px; 
-  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
-button  {
+
+button {
   border: none;
   float: right;
   border-radius: 10px;
   margin: 15px;
-  background-color: #e02041;
+  background-color: var(--red);
   width: 100px;
   height: 50px;
 }
-.botoes{
+
+.botoes {
   position: absolute;
   right: 50px;
   bottom: 10px;
+  margin-bottom: 2rem;
+}
+
+#voltar {
+  margin-right: 0.5rem;
 }

@@ -3,7 +3,7 @@
 } ?>
 
 <div class="container">
-  <h2>Cidades</h2>
+  <h2>Sessões</h2>
 
   <div>
     <table>
@@ -38,7 +38,7 @@
     <a id="voltar" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>">
       Voltar
     </a>
-    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>cidades/criar">
+    <a id="novo" class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>sessoes/criar">
       Novo
     </a>
   </div>
