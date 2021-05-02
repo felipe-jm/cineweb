@@ -10,6 +10,8 @@ class Comidas
    */
   public function index()
   {
+    $comidas = Comida::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/comidas/index.php';

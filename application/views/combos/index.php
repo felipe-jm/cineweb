@@ -7,7 +7,6 @@
 
   <div>
     <table>
-
       <tbody>
         <?php foreach ($combos as $combo) { ?>
           <tr>
@@ -18,7 +17,7 @@
               </a>
             </td>
             <td class="acoes">
-              <a href="<?php echo URL_WITH_INDEX_FILE . 'combos/deletarAssento/' . htmlspecialchars($combo->id, ENT_QUOTES, 'UTF-8'); ?>">
+              <a href="<?php echo URL_WITH_INDEX_FILE . 'combos/deletarCombo/' . htmlspecialchars($combo->id, ENT_QUOTES, 'UTF-8'); ?>">
                 <img src="<?php echo URL; ?>public/img/icons/trash.svg" alt="Deletar" height="28" width="28">
               </a>
             </td>
