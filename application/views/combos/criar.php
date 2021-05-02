@@ -11,6 +11,18 @@
       <input id="nome" class="input" type="text" name="nome" required>
     </label>
 
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>combos/criarCombo" method="POST">
+    <label for="tipo">
+      Tipo
+      <input id="tipo" class="input" type="number" name="tipo" required>
+    </label>
+    
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>combos/criarCombo" method="POST">
+    <label for="preco">
+      Preço
+      <input id="preco" class="input" type="number" name="preco" required>
+    </label>
+    
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>combos">
         Cancelar
