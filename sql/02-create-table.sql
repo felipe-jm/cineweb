@@ -6,32 +6,33 @@ CREATE TABLE IF NOT EXISTS `cidades` (
 
 CREATE TABLE IF NOT EXISTS `unidades` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (cidade_id) REFERENCES cidades(id)
     cidade_id int(6) UNSIGNED NOT NULL,
     nome VARCHAR(200) NOT NULL
 )
 
 CREATE TABLE IF NOT EXISTS `clientes` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id int(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     nome VARCHAR(200) NOT NULL
 )
 
 CREATE TABLE IF NOT EXISTS `promocoes` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id int(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     nome VARCHAR(200) NOT NULL,
     data_fim DATETIME
 )
 
 CREATE TABLE IF NOT EXISTS `combos` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id int(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     nome VARCHAR(200) NOT NULL
 )
 
 CREATE TABLE IF NOT EXISTS `assentos` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id int(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     cliente_id int(6) UNSIGNED NOT NULL,
     numero int(6) UNSIGNED NOT NULL
 )
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `sessoes` (
 
 CREATE TABLE IF NOT EXISTS `filmes` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id int(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     sessao_id int(6) UNSIGNED NOT NULL,
     nome VARCHAR(200) NOT NULL,
     duracao int(6) UNSIGNED
@@ -52,12 +53,13 @@ CREATE TABLE IF NOT EXISTS `filmes` (
 
 CREATE TABLE IF NOT EXISTS `comidas` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id int(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     nome VARCHAR(200) NOT NULL
 )
 
 CREATE TABLE IF NOT EXISTS `funcionarios` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     unidade_id int(6) UNSIGNED NOT NULL,
     nome VARCHAR(200) NOT NULL,
     cpf VARCHAR(11) NOT NULL
