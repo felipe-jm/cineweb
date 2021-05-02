@@ -10,6 +10,8 @@ class Combos
    */
   public function index()
   {
+    $combos = Combo::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/combos/index.php';

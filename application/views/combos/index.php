@@ -9,28 +9,21 @@
     <table>
 
       <tbody>
-        <tr>
-          <td>
-            Cuiabá
-          </td>
-          <td class="acoes">
-            <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">
-          </td>
-          <td class="acoes">
-            <img src="<?php echo URL; ?>public/img/icons/trash.svg" alt="Deletar" height="28" width="28">
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Sinop
-          </td>
-          <td class="acoes">
-            <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">
-          </td>
-          <td class="acoes">
-            <img src="<?php echo URL; ?>public/img/icons/trash.svg" alt="Deletar" height="28" width="28">
-          </td>
-        </tr>
+        <?php foreach ($combos as $combo) { ?>
+          <tr>
+            <td><?php if (isset($combo->nome)) echo htmlspecialchars($combo->nome, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td class="acoes">
+              <a href="<?php echo URL_WITH_INDEX_FILE . 'combos/editar/' . htmlspecialchars($combo->id, ENT_QUOTES, 'UTF-8'); ?>">
+                <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">
+              </a>
+            </td>
+            <td class="acoes">
+              <a href="<?php echo URL_WITH_INDEX_FILE . 'combos/deletarAssento/' . htmlspecialchars($combo->id, ENT_QUOTES, 'UTF-8'); ?>">
+                <img src="<?php echo URL; ?>public/img/icons/trash.svg" alt="Deletar" height="28" width="28">
+              </a>
+            </td>
+          </tr>
+        <?php } ?>
       </tbody>
     </table>
   </div>
