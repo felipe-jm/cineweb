@@ -10,6 +10,8 @@ class Funcionarios
    */
   public function index()
   {
+    $funcionarios = Funcionario::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/funcionarios/index.php';
