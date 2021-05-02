@@ -10,6 +10,8 @@ class Assentos
    */
   public function index()
   {
+    $assentos = Assento::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/assentos/index.php';
