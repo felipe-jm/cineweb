@@ -10,6 +10,12 @@
       Nome
       <input id="nome" class="input" type="text" name="nome" required>
     </label>
+  
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>cidades/criarCidade" method="POST">
+    <label for="estado">
+      Estado
+      <input id="estado" class="input" type="text" name="estado" required>
+    </label>
 
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>cidades">

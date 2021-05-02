@@ -6,9 +6,9 @@
   <h2>Criar sessão</h2>
 
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>sessoes/editarSessao" method="POST">
-    <label for="nome">
-      Nome
-      <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($sessao->nome, ENT_QUOTES, 'UTF-8'); ?>">
+    <label for="numero">
+      Número
+      <input id="numero" class="input" type="number" name="numero" required value="<?php echo htmlspecialchars($sessao->numero, ENT_QUOTES, 'UTF-8'); ?>">
     </label>
 
     <div class="botoes">

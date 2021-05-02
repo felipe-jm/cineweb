@@ -25,7 +25,7 @@
             Sinop
           </td>
           <td class="acoes">
-            <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">
+            <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28" onclick="<?php echo URL_WITH_INDEX_FILE; ?>filmes/editar">
           </td>
           <td class="acoes">
             <img src="<?php echo URL; ?>public/img/icons/trash.svg" alt="Deletar" height="28" width="28">
