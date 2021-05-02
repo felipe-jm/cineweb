@@ -10,6 +10,8 @@ class Filmes
    */
   public function index()
   {
+    $filmes = Filme::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/filmes/index.php';
@@ -76,6 +78,20 @@ class Filmes
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'filmes/index');
+  }
+
+  /**
+   * ACTION: deletarFilme
+   * Este método é executado ao realizar o submit de um formulário com a action filmes/deletarFilme
+   * 
+   */
+  public function deletarFilme($filme_id)
+  {
+    if (isset($filme_id)) {
+      Filme::delete($filme_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'filmes/index');
   }
 }

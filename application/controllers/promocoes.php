@@ -10,6 +10,8 @@ class Promocoes
    */
   public function index()
   {
+    $promocoes = Promocao::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/promocoes/index.php';
@@ -76,6 +78,20 @@ class Promocoes
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'promocoes/index');
+  }
+
+  /**
+   * ACTION: deletarPromocao
+   * Este método é executado ao realizar o submit de um formulário com a action promocoes/deletarPromocao
+   * 
+   */
+  public function deletarPromocao($promocao_id)
+  {
+    if (isset($promocao_id)) {
+      Promocao::delete($promocao_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'promocoes/index');
   }
 }
