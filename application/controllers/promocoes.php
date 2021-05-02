@@ -10,6 +10,8 @@ class Promocoes
    */
   public function index()
   {
+    $promocoes = Promocao::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/promocoes/index.php';
