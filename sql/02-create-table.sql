@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS `promocoes` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     nome VARCHAR(200) NOT NULL,
-    data_fim DATETIME
+    data_fim DATETIME,
+    data_inicio DATETIME
 )
 
 CREATE TABLE IF NOT EXISTS `combos` (
