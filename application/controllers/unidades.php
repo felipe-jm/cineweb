@@ -10,6 +10,8 @@ class Unidades
    */
   public function index()
   {
+    $unidades = Unidade::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/unidades/index.php';
