@@ -10,6 +10,8 @@ class Filmes
    */
   public function index()
   {
+    $filmes = Filme::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/filmes/index.php';
