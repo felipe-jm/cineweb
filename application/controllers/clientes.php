@@ -10,6 +10,8 @@ class Clientes
    */
   public function index()
   {
+    $clientes = Cliente::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/clientes/index.php';
