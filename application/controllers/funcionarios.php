@@ -77,4 +77,18 @@ class Funcionarios
     // redireciona após criação
     header('location: ' . URL_WITH_INDEX_FILE . 'funcionarios/index');
   }
+
+  /**
+   * ACTION: deletarFuncionario
+   * Este método é executado ao realizar o submit de um formulário com a action funcionarios/deletarFuncionario
+   * 
+   */
+  public function deletarFuncionario($funcionario_id)
+  {
+    if (isset($funcionario_id)) {
+      Filme::delete($funcionario_id);
+    }
+
+    header('location: ' . URL_WITH_INDEX_FILE . 'funcionarios/index');
+  }
 }

@@ -78,4 +78,18 @@ class Promocoes
     // redireciona após criação
     header('location: ' . URL_WITH_INDEX_FILE . 'promocoes/index');
   }
+
+  /**
+   * ACTION: deletarPromocao
+   * Este método é executado ao realizar o submit de um formulário com a action promocoes/deletarPromocao
+   * 
+   */
+  public function deletarPromocao($promocao_id)
+  {
+    if (isset($promocao_id)) {
+      Promocao::delete($promocao_id);
+    }
+
+    header('location: ' . URL_WITH_INDEX_FILE . 'promocoes/index');
+  }
 }

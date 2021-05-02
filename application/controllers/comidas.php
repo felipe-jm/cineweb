@@ -78,4 +78,18 @@ class Comidas
     // redireciona após criação
     header('location: ' . URL_WITH_INDEX_FILE . 'comidas/index');
   }
+
+  /**
+   * ACTION: deletarComidas
+   * Este método é executado ao realizar o submit de um formulário com a action comidas/deletarComidas
+   * 
+   */
+  public function deletarComidas($comida_id)
+  {
+    if (isset($comida_id)) {
+      Comida::delete($comida_id);
+    }
+
+    header('location: ' . URL_WITH_INDEX_FILE . 'comidas/index');
+  }
 }

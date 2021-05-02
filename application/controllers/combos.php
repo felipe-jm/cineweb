@@ -78,4 +78,18 @@ class Combos
     // redireciona após criação
     header('location: ' . URL_WITH_INDEX_FILE . 'combos/index');
   }
+
+  /**
+   * ACTION: deletarCombo
+   * Este método é executado ao realizar o submit de um formulário com a action combos/deletarCombo
+   * 
+   */
+  public function deletarCombo($combo_id)
+  {
+    if (isset($combo_id)) {
+      Combo::delete($combo_id);
+    }
+
+    header('location: ' . URL_WITH_INDEX_FILE . 'combos/index');
+  }
 }

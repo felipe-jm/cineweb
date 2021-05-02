@@ -78,4 +78,18 @@ class Assentos
     // redireciona após criação
     header('location: ' . URL_WITH_INDEX_FILE . 'assentos/index');
   }
+
+  /**
+   * ACTION: deletarAssento
+   * Este método é executado ao realizar o submit de um formulário com a action assentos/deletarAssento
+   * 
+   */
+  public function deletarAssento($assento_id)
+  {
+    if (isset($assento_id)) {
+      Assento::delete($assento_id);
+    }
+
+    header('location: ' . URL_WITH_INDEX_FILE . 'assentos/index');
+  }
 }
