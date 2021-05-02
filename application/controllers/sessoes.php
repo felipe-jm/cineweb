@@ -10,6 +10,8 @@ class Sessoes
    */
   public function index()
   {
+    $sessoes = Sessao::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/sessoes/index.php';
