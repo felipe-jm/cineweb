@@ -9,6 +9,8 @@ require_once APP . 'database/connection.php';
  * @property int id
  * @property string nome
  * @property int unidade_id
+ * @property int peso
+ * @property int preco 
  */
 
 class Comida extends Model
@@ -27,15 +29,18 @@ class Comida extends Model
   }
 
   /**
-   * @param string $nome
-   * @param int $unidade_id
+   * @property int id
+   * @property string nome
+   * @property int unidade_id
+   * @property int peso
+   * @property int preco 
    */
-  public static function add($nome, $unidade_id)
+  public static function add($nome, $unidade_id, $peso, $preco)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO combos (nome, unidade_id) VALUES (:nome, :unidade_id)";
+    $sql = "INSERT INTO combos (nome, unidade_id, peso, preco) VALUES (:nome, :unidade_id, :peso, :preco)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id);
+    $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id, ':peso' => $peso, ':preco' => $preco);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -76,16 +81,19 @@ class Comida extends Model
   }
 
   /**
-   * @param string $nome
-   * @param int $unidade_id
+   * @property int id
+   * @property string nome
+   * @property int unidade_id
    * @param int $comida_id
+   * @property int peso
+   * @property int preco 
    */
-  public static function update($nome, $unidade_id, $comida_id)
+  public static function update($nome, $unidade_id, $comida_id, $peso, $preco)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE combos SET nome = :nome,unidade_id = :unidade_id WHERE id = :comida_id";
+    $sql = "UPDATE combos SET nome = :nome,unidade_id = :unidade_id, peso = :peso, preco = :preco WHERE id = :comida_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id, ':comida_id' => $comida_id);
+    $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id, ':comida_id' => $comida_id, ':peso' => $peso, ':preco' => $preco);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();

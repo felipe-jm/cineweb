@@ -8,6 +8,7 @@ require_once APP . 'database/connection.php';
  *
  * @property int id
  * @property string nome
+ * @property string endereco
  */
 
 class Unidade extends Model
@@ -18,7 +19,7 @@ class Unidade extends Model
   public static function all()
   {
     $connection = Connection::getConnection();
-    $sql = "SELECT id, nome FROM unidades";
+    $sql = "SELECT id, nome, endereco FROM unidades";
     $query = $connection->prepare($sql);
     $query->execute();
 
@@ -28,13 +29,14 @@ class Unidade extends Model
   /**
    * @param string $nome
    * @param int $cidade_id
+   * @param string $endereco
    */
-  public static function add($nome, $cidade_id)
+  public static function add($nome, $cidade_id, $endereco)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO unidades (nome, cidade_id) VALUES (:nome, :cidade_id)";
+    $sql = "INSERT INTO unidades (nome, cidade_id, endereco) VALUES (:nome, :cidade_id, :endereco)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':cidade_id' => $cidade_id);
+    $parameters = array(':nome' => $nome, ':cidade_id' => $cidade_id, ':endereco' => $endereco);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -78,13 +80,14 @@ class Unidade extends Model
    * @param string $nome
    * @param int $cidade_id
    * @param int $unidade_id
+   * @param string $endereco
    */
-  public static function update($nome, $cidade_id, $unidade_id)
+  public static function update($nome, $cidade_id, $unidade_id, $endereco)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE unidades SET nome = :nome, cidade_id = :cidade_id WHERE id = :unidade_id";
+    $sql = "UPDATE unidades SET nome = :nome, cidade_id = :cidade_id, endereco = :endereco WHERE id = :unidade_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':cidade_id' => $cidade_id, ':unidade_id' => $unidade_id);
+    $parameters = array(':nome' => $nome, ':cidade_id' => $cidade_id, ':unidade_id' => $unidade_id, ':endereco' => $endereco);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();

@@ -9,6 +9,8 @@ require_once APP . 'database/connection.php';
  * @property int id
  * @property string nome
  * @property int duracao
+ * @property int categoria
+ * @property int classificacao
  * @property int unidade_id
  * @property int sessao_id
  */
@@ -29,17 +31,20 @@ class Filme extends Model
   }
 
   /**
+   * @property int id
    * @property string nome
    * @property int duracao
+   * @property int categoria
+   * @property int classificacao
    * @property int unidade_id
    * @property int sessao_id
    */
-  public static function add($nome, $duracao, $unidade_id, $sessao_id)
+  public static function add($nome, $duracao, $unidade_id, $sessao_id, $categoria, $classificacao)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO filmes (nome, duracao, unidade_id, sessao_id) VALUES (:nome, :duracao, :unidade_id, :sessao_id)";
+    $sql = "INSERT INTO filmes (nome, duracao, unidade_id, sessao_id, categoria, classificacao) VALUES (:nome, :duracao, :unidade_id, :sessao_id, :categoria, :classificacao)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':duracao' => $duracao, ':unidade_id' => $unidade_id, ':sessao_id' => $sessao_id);
+    $parameters = array(':nome' => $nome, ':duracao' => $duracao, ':unidade_id' => $unidade_id, ':sessao_id' => $sessao_id, ':categoria' => $categoria, ':classificacao' => $classificacao);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -84,13 +89,15 @@ class Filme extends Model
    * @property int duracao
    * @property int unidade_id
    * @property int sessao_id
+   * @property string categoria
+   * @property int classificacao
    */
-  public static function update($nome, $duracao, $unidade_id, $sessao_id, $filme_id)
+  public static function update($nome, $duracao, $unidade_id, $sessao_id, $filme_id, $categoria, $classificacao)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE filmes SET nome = :nome, duracao = :duracao, unidade_id = :unidade_id, sessao_id = :sessao_id WHERE id = :filme_id";
+    $sql = "UPDATE filmes SET nome = :nome, duracao = :duracao, unidade_id = :unidade_id, sessao_id = :sessao_id, filme_id = :filme_id, categoria = :categoria, categoria = :categoria, classificacao = :classificacao WHERE id = :filme_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':duracao' => $duracao, ':unidade_id' => $unidade_id, ':sessao_id' => $sessao_id, ':filme_id' => $filme_id);
+    $parameters = array(':nome' => $nome, ':duracao' => $duracao, ':unidade_id' => $unidade_id, ':sessao_id' => $sessao_id, ':filme_id' => $filme_id, ':categoria' => $categoria, ':classificacao' => $classificacao);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();

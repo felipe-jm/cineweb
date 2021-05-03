@@ -8,6 +8,7 @@ require_once APP . 'database/connection.php';
  *
  * @property int id
  * @property string nome
+ * @property string estado
  */
 
 class Cidade extends Model
@@ -27,13 +28,14 @@ class Cidade extends Model
 
   /**
    * @param string $nome
+   * @param string estado
    */
-  public static function add($nome)
+  public static function add($nome, $estado)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO cidades (nome) VALUES (:nome)";
+    $sql = "INSERT INTO cidades (nome, estado) VALUES (:nome, :estado)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome);
+    $parameters = array(':nome', ':estado' => $nome, $estado);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -75,14 +77,15 @@ class Cidade extends Model
 
   /**
    * @param string $nome
+   * @param string estado
    * @param int $cidade_id
    */
-  public static function update($nome, $cidade_id)
+  public static function update($nome, $estado, $cidade_id)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE cidades SET nome = :nome WHERE id = :cidade_id";
+    $sql = "UPDATE cidades SET nome = :nome, estado = :estado WHERE id = :cidade_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':cidade_id' => $cidade_id);
+    $parameters = array(':nome' => $nome, ':estado' => $estado,':cidade_id' => $cidade_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
