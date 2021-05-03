@@ -10,6 +10,8 @@ class Unidades
    */
   public function index()
   {
+    $unidades = Unidade::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/unidades/index.php';
@@ -76,6 +78,20 @@ class Unidades
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'unidades/index');
+  }
+
+  /**
+   * ACTION: deletarUnidade
+   * Este método é executado ao realizar o submit de um formulário com a action unidades/deletarUnidade
+   * 
+   */
+  public function deletarUnidade($unidade_id)
+  {
+    if (isset($unidade_id)) {
+      Unidade::delete($unidade_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'unidades/index');
   }
 }

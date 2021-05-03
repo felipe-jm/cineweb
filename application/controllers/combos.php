@@ -10,6 +10,8 @@ class Combos
    */
   public function index()
   {
+    $combos = Combo::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/combos/index.php';
@@ -76,6 +78,20 @@ class Combos
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'combos/index');
+  }
+
+  /**
+   * ACTION: deletarCombo
+   * Este método é executado ao realizar o submit de um formulário com a action combos/deletarCombo
+   * 
+   */
+  public function deletarCombo($combo_id)
+  {
+    if (isset($combo_id)) {
+      Combo::delete($combo_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'combos/index');
   }
 }

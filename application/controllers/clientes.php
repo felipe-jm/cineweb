@@ -10,6 +10,8 @@ class Clientes
    */
   public function index()
   {
+    $clientes = Cliente::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/clientes/index.php';
@@ -76,6 +78,20 @@ class Clientes
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'clientes/index');
+  }
+
+  /**
+   * ACTION: deletarCliente
+   * Este método é executado ao realizar o submit de um formulário com a action clientes/deletarCliente
+   * 
+   */
+  public function deletarCliente($cliente_id)
+  {
+    if (isset($cliente_id)) {
+      Cliente::delete($cliente_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'clientes/index');
   }
 }

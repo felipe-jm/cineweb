@@ -10,6 +10,8 @@ class Cidades
    */
   public function index()
   {
+    $cidades = Cidade::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/cidades/index.php';
@@ -76,6 +78,20 @@ class Cidades
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'cidades/index');
+  }
+
+  /**
+   * ACTION: deletarCidade
+   * Este método é executado ao realizar o submit de um formulário com a action cidades/deletarCidade
+   * 
+   */
+  public function deletarCidade($cidade_id)
+  {
+    if (isset($cidade_id)) {
+      Cidade::delete($cidade_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'cidades/index');
   }
 }

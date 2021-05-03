@@ -11,6 +11,19 @@
       <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($cliente->nome, ENT_QUOTES, 'UTF-8'); ?>">
     </label>
 
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>clientes/criarCliente" method="POST">
+    <label for="cpf">
+      CPF
+      <input id="cpf" class="input" type="string" name="cpf" required value="<?php echo htmlspecialchars($cliente->cpf, ENT_QUOTES, 'UTF-8'); ?>">
+    </label>
+  
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>clientes/criarCliente" method="POST">
+    <label for="telefone">
+      Telefone
+      <input id="telefone" class="input" type="string" name="telefone" required value="<?php echo htmlspecialchars($cliente->telefone, ENT_QUOTES, 'UTF-8'); ?>">
+    </label>
+
+
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>clientes">
         Cancelar

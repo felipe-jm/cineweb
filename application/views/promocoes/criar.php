@@ -4,11 +4,29 @@
 
 <div class="container">
   <h2>Criar promoção</h2>
-
+  
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>promocoes/criarPromocao" method="POST">
     <label for="nome">
       Nome
       <input id="nome" class="input" type="text" name="nome" required>
+    </label>
+
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>promocoes/criarPromocao" method="POST">
+    <label for="data_inicio">
+      Data inicial
+      <input id="data_inicio" class="input" type="date" name="data_inicio" required>
+    </label>
+
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>promocoes/criarPromocao" method="POST">
+    <label for="data_fim">
+      Data término
+      <input id="data_fim" class="input" type="date" name="data_fim" required>
+    </label>
+  
+  <form action="<?php echo URL_WITH_INDEX_FILE; ?>promocoes/criarPromocao" method="POST">
+    <label for="preco">
+      Preço
+      <input id="preco" class="input" type="number" name="preco" required>
     </label>
 
     <div class="botoes">

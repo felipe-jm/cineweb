@@ -10,6 +10,8 @@ class Sessoes
    */
   public function index()
   {
+    $sessoes = Sessao::all();
+
     // load views
     require APP . 'views/_templates/header.php';
     require APP . 'views/sessoes/index.php';
@@ -76,6 +78,20 @@ class Sessoes
     }
 
     // redireciona após criação
+    header('location: ' . URL_WITH_INDEX_FILE . 'sessoes/index');
+  }
+
+  /**
+   * ACTION: deletarSessao
+   * Este método é executado ao realizar o submit de um formulário com a action sessoes/deletarSessao
+   * 
+   */
+  public function deletarSessao($sessao_id)
+  {
+    if (isset($sessao_id)) {
+      Sessao::delete($sessao_id);
+    }
+
     header('location: ' . URL_WITH_INDEX_FILE . 'sessoes/index');
   }
 }
