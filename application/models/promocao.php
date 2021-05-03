@@ -8,8 +8,10 @@ require_once APP . 'database/connection.php';
  *
  * @property int id
  * @property string nome
+ * @property string data_inicio
  * @property string data_fim
  * @property int unidade_id
+ * @property double preco
  */
 
 class Promocao extends Model
@@ -29,15 +31,17 @@ class Promocao extends Model
 
   /**
    * @param string $nome
+   * @property double $preco
    * @property string $data_fim
+   * @property string $data_inicio
    * @param int $unidade_id
    */
-  public static function add($nome, $data_fim, $unidade_id)
+  public static function add($nome, $preco, $data_fim, $data_inicio, $unidade_id)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO promocoes (nome, data_fim, unidade_id) VALUES (:nome, :data_fim, :unidade_id)";
+    $sql = "INSERT INTO promocoes (nome, preco, data_fim, data_inicio, unidade_id) VALUES (:nome, :preco, :data_fim, :data_inicio,:unidade_id)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':data_fim' => $data_fim, ':unidade_id' => $unidade_id);
+    $parameters = array(':nome' => $nome, ':preco' => $preco,':data_fim' => $data_fim, ':data_inicio' => $data_inicio, ':unidade_id' => $unidade_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -80,15 +84,16 @@ class Promocao extends Model
   /**
    * @param string $nome
    * @property string $data_fim
+   * @property string $data_inicio
    * @param int $unidade_id
    * @param int $promocao_id
    */
-  public static function update($nome, $data_fim, $unidade_id, $promocao_id)
+  public static function update($nome, $data_fim, $data_inicio, $unidade_id, $promocao_id)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE promocoes SET nome = :nome, data_fim = :data_fim, unidade_id = :unidade_id WHERE id = :promocao_id";
+    $sql = "UPDATE promocoes SET nome = :nome, data_fim = :data_fim, data_inicio = :data_inicio, unidade_id = :unidade_id WHERE id = :promocao_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':data_fim' => $data_fim, ':unidade_id' => $unidade_id, ':promocao_id' => $promocao_id);
+    $parameters = array(':nome' => $nome, ':data_fim' => $data_fim, ':data_inicio' => $data_inicio, ':unidade_id' => $unidade_id, ':promocao_id' => $promocao_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();

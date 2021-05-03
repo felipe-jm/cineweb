@@ -7,8 +7,8 @@ require_once APP . 'database/connection.php';
  * - Sessao
  *
  * @property int id
- * @property int numero
  * @property int unidade_id
+ * @property int numero
  */
 
 class Sessao extends Model
