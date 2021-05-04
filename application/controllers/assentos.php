@@ -38,7 +38,7 @@ class Assentos
   {
     // Se tiver dados no POST cria novo assento
     if (isset($_POST['criarAssento'])) {
-      Assento::add($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id']);
+      Assento::add($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['disponivel']);
     }
 
     // redireciona após criação
@@ -74,7 +74,7 @@ class Assentos
   {
     // Se tiver dados no POST cria novo assento
     if (isset($_POST['editarAssento'])) {
-      Assento::update($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['assento_id']);
+      Assento::update($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['assento_id'], $_POST['disponivel']);
     }
 
     // redireciona após criação

@@ -11,6 +11,13 @@
       <input id="numero" class="input" type="number" name="numero" required value="<?php echo htmlspecialchars($assento->numero, ENT_QUOTES, 'UTF-8'); ?>">
     </label>
 
+    <label for="disponivel">
+      Número
+      <input id="disponivel" type="checkbox" name="disponivel" required value="<?php echo htmlspecialchars($assento->disponivel, ENT_QUOTES, 'UTF-8'); ?>">
+    </label>
+
+    <input type="hidden" name="assento_id" value="<?php echo htmlspecialchars($assento->id, ENT_QUOTES, 'UTF-8'); ?>" />
+
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>assentos">
         Cancelar
