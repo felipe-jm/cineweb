@@ -35,7 +35,7 @@ class Cidade extends Model
     $connection = Connection::getConnection();
     $sql = "INSERT INTO cidades (nome, estado) VALUES (:nome, :estado)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome', ':estado' => $nome, $estado);
+    $parameters = array(':nome' => $nome, ':estado' => $estado);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -85,7 +85,7 @@ class Cidade extends Model
     $connection = Connection::getConnection();
     $sql = "UPDATE cidades SET nome = :nome, estado = :estado WHERE id = :cidade_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':estado' => $estado,':cidade_id' => $cidade_id);
+    $parameters = array(':nome' => $nome, ':estado' => $estado, ':cidade_id' => $cidade_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
