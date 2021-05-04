@@ -10,12 +10,13 @@
       Nome
       <input id="nome" class="input" type="text" name="nome" required>
     </label>
-  
-  <form action="<?php echo URL_WITH_INDEX_FILE; ?>sessoes/criarSessao" method="POST">
+
     <label for="endereco">
       Endereço
       <input id="endereco" class="input" type="text" name="endereco" required>
     </label>
+
+    <?php require_once APP . '/views/_components/cidadesSelect.php'; ?>
 
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>unidades">
