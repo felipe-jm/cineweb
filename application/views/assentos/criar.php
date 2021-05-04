@@ -11,6 +11,17 @@
       <input id="numero" class="input" type="number" name="numero" required>
     </label>
 
+    <label for="disponivel">
+      Disponível
+      <input id="disponivel" type="checkbox" name="disponivel" value="1">
+    </label>
+
+    <?php require_once APP . '/views/_components/unidadesSelect.php'; ?>
+
+    <?php require_once APP . '/views/_components/clientesSelect.php'; ?>
+
+    <?php require_once APP . '/views/_components/sessoesSelect.php'; ?>
+
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>assentos">
         Cancelar

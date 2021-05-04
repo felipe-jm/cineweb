@@ -8,7 +8,8 @@ require_once APP . 'database/connection.php';
  *
  * @property int id
  * @property int unidade_id
- * @property int client_id
+ * @property int cliente_id
+ * @property int sessao_id
  * @property int numero
  * @property boolean disponivel
  */
@@ -31,15 +32,16 @@ class Assento extends Model
   /**
    * @property int numero
    * @property int unidade_id
-   * @property int client_id
+   * @property int cliente_id
+   * @property int sessao_id
    * @property boolean disponivel
    */
-  public static function add($numero, $unidade_id, $client_id, $disponivel)
+  public static function add($numero, $unidade_id, $cliente_id, $sessao_id, $disponivel)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO assentos (numero, unidade_id, client_id, disponivel) VALUES (:numero, :unidade_id, :client_id, :disponivel)";
+    $sql = "INSERT INTO assentos (numero, unidade_id, cliente_id, sessao_id, disponivel) VALUES (:numero, :unidade_id, :cliente_id, :sessao_id, :disponivel)";
     $query = $connection->prepare($sql);
-    $parameters = array(':numero' => $numero, ':unidade_id' => $unidade_id, ':client_id' => $client_id, ':disponivel' => $disponivel);
+    $parameters = array(':numero' => $numero, ':unidade_id' => $unidade_id, ':cliente_id' => $cliente_id, ':sessao_id' => $sessao_id, ':disponivel' => $disponivel);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -80,8 +82,8 @@ class Assento extends Model
   }
 
   /**
-   * @property string nome
    * @property int numero
+   * @property int unidade_id
    * @property int cliente_id
    * @property int sessao_id
    * @property boolean disponivel
@@ -89,7 +91,7 @@ class Assento extends Model
   public static function update($numero, $cliente_id, $sessao_id, $assento_id, $disponivel)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE assentos SET numero = :numero, cliente_id = :cliente_id, sessao_id = :sessao_id, sessao_id = :sessao_id, disponivel = :disponivel,WHERE id = :assento_id";
+    $sql = "UPDATE assentos SET numero = :numero, cliente_id = :cliente_id, sessao_id = :sessao_id, disponivel = :disponivel WHERE id = :assento_id";
     $query = $connection->prepare($sql);
     $parameters = array(':numero' => $numero, ':cliente_id' => $cliente_id, ':sessao_id' => $sessao_id, ':assento_id' => $assento_id, ':disponivel' => $disponivel);
 

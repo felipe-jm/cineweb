@@ -38,7 +38,8 @@ class Assentos
   {
     // Se tiver dados no POST cria novo assento
     if (isset($_POST['criarAssento'])) {
-      Assento::add($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['disponivel']);
+      $disponivel = isset($_POST['disponivel']) ? 1 : 0;
+      Assento::add($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['sessao_id'], $disponivel);
     }
 
     // redireciona após criação
@@ -55,6 +56,9 @@ class Assentos
     if (isset($assento_id)) {
       // load assento
       $assento = Assento::get($assento_id);
+      $unidade_id = $assento->unidade_id;
+      $cliente_id = $assento->cliente_id;
+      $sessao_id = $assento->sessao_id;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,11 +78,12 @@ class Assentos
   {
     // Se tiver dados no POST cria novo assento
     if (isset($_POST['editarAssento'])) {
-      Assento::update($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['assento_id'], $_POST['disponivel']);
+      $disponivel = isset($_POST['disponivel']) ? 1 : 0;
+      Assento::update($_POST['numero'], $_POST['unidade_id'], $_POST['cliente_id'], $_POST['assento_id'], $disponivel);
     }
 
     // redireciona após criação
-    header('location: ' . URL_WITH_INDEX_FILE . 'assentos/index');
+    // header('location: ' . URL_WITH_INDEX_FILE . 'assentos/index');
   }
 
   /**

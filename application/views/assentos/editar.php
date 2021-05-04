@@ -12,9 +12,15 @@
     </label>
 
     <label for="disponivel">
-      Número
-      <input id="disponivel" type="checkbox" name="disponivel" required value="<?php echo htmlspecialchars($assento->disponivel, ENT_QUOTES, 'UTF-8'); ?>">
+      Disponível
+      <input id="disponivel" type="checkbox" name="disponivel" value="<?php echo isset($assento->disponivel) && htmlspecialchars($assento->disponivel, ENT_QUOTES, 'UTF-8'); ?>">
     </label>
+
+    <?php require_once APP . '/views/_components/unidadesSelect.php'; ?>
+
+    <?php require_once APP . '/views/_components/clientesSelect.php'; ?>
+
+    <?php require_once APP . '/views/_components/sessoesSelect.php'; ?>
 
     <input type="hidden" name="assento_id" value="<?php echo htmlspecialchars($assento->id, ENT_QUOTES, 'UTF-8'); ?>" />
 
