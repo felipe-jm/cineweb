@@ -55,8 +55,7 @@ class Unidades
     if (isset($unidade_id)) {
       // load unidade
       $unidade = Unidade::get($unidade_id);
-
-      $default_id = $unidade->cidade_id;
+      $cidade_id = $unidade->cidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';

@@ -11,7 +11,7 @@ $clientes = Cliente::all();
   Cliente
   <select id="cliente_id" name="cliente_id" class="input" required>
     <?php foreach ($clientes as $cliente) { ?>
-      <?php if (isset($default_id) && $default_id == $cliente->id) { ?>
+      <?php if (isset($cliente_id) && $cliente_id == $cliente->id) { ?>
         <option value="<?php echo $cliente->id ?>" selected>
           <?php if (isset($cliente->nome)) echo htmlspecialchars($cliente->nome, ENT_QUOTES, 'UTF-8'); ?>
         </option>

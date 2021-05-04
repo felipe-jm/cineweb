@@ -10,7 +10,9 @@
       Número
       <input id="numero" class="input" type="text" name="numero" required>
     </label>
-  
+
+    <?php require_once APP . '/views/_components/unidadesSelect.php'; ?>
+
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>sessoes">
         Cancelar

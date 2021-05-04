@@ -55,7 +55,7 @@ class Clientes
     if (isset($cliente_id)) {
       // load cliente
       $cliente = Cliente::get($cliente_id);
-      $default_id = $cliente->unidade_id;
+      $unidade_id = $cliente->unidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';
