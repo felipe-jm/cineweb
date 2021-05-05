@@ -38,7 +38,7 @@ class Promocoes
   {
     // Se tiver dados no POST cria nova promocao
     if (isset($_POST['criarPromocao'])) {
-      Promocao::add($_POST['nome'], $_POST['data_fim'], $_POST['unidade_id']);
+      Promocao::add($_POST['nome'], $_POST['preco'], $_POST['data_fim'], $_POST['data_inicio'], $_POST['unidade_id']);
     }
 
     // redireciona após criação
@@ -55,6 +55,10 @@ class Promocoes
     if (isset($promocao_id)) {
       // load promocao
       $promocao = Promocao::get($promocao_id);
+      $unidade_id = $promocao->unidade_id;
+
+      $promocao->data_inicio = date_format(new DateTime($promocao->data_inicio), 'Y-m-d');
+      $promocao->data_fim = date_format(new DateTime($promocao->data_fim), 'Y-m-d');
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +78,7 @@ class Promocoes
   {
     // Se tiver dados no POST cria nova promocao
     if (isset($_POST['editarPromocao'])) {
-      Promocao::update($_POST['nome'], $_POST['data_fim'], $_POST['unidade_id'], $_POST['promocao_id']);
+      Promocao::update($_POST['nome'], $_POST['preco'], $_POST['data_fim'], $_POST['data_inicio'], $_POST['unidade_id'], $_POST['promocao_id']);
     }
 
     // redireciona após criação
