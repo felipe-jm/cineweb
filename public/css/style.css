@@ -119,6 +119,7 @@ a {
   background-color: var(--gray);
   outline: none;
   border: 0;
+  margin-bottom: 1rem;
 }
 
 .submitBtn {
@@ -137,7 +138,8 @@ label {
   flex-direction: column;
 }
 
-label input {
+label input,
+select {
   margin-top: 0.5rem;
 }
 

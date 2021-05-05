@@ -95,7 +95,7 @@ class Filme extends Model
   public static function update($nome, $duracao, $unidade_id, $sessao_id, $filme_id, $categoria, $classificacao)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE filmes SET nome = :nome, duracao = :duracao, unidade_id = :unidade_id, sessao_id = :sessao_id, filme_id = :filme_id, categoria = :categoria, categoria = :categoria, classificacao = :classificacao WHERE id = :filme_id";
+    $sql = "UPDATE filmes SET nome = :nome, duracao = :duracao, unidade_id = :unidade_id, sessao_id = :sessao_id, categoria = :categoria, classificacao = :classificacao WHERE id = :filme_id";
     $query = $connection->prepare($sql);
     $parameters = array(':nome' => $nome, ':duracao' => $duracao, ':unidade_id' => $unidade_id, ':sessao_id' => $sessao_id, ':filme_id' => $filme_id, ':categoria' => $categoria, ':classificacao' => $classificacao);
 

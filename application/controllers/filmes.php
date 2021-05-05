@@ -38,7 +38,7 @@ class Filmes
   {
     // Se tiver dados no POST cria novo filme
     if (isset($_POST['criarFilme'])) {
-      Filme::add($_POST['nome'], $_POST['duracao'], $_POST['unidade_id'], $_POST['sessao_id']);
+      Filme::add($_POST['nome'], $_POST['duracao'], $_POST['unidade_id'], $_POST['sessao_id'], $_POST['categoria'], $_POST['classificacao']);
     }
 
     // redireciona após criação
@@ -55,6 +55,9 @@ class Filmes
     if (isset($filme_id)) {
       // load filme
       $filme = Filme::get($filme_id);
+      $unidade_id = $filme->unidade_id;
+      $sessao_id = $filme->sessao_id;
+      $categoria = $filme->categoria;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +77,7 @@ class Filmes
   {
     // Se tiver dados no POST cria novo filme
     if (isset($_POST['editarFilme'])) {
-      Filme::update($_POST['nome'], $_POST['duracao'], $_POST['unidade_id'], $_POST['sessao_id'], $_POST['filme_id']);
+      Filme::update($_POST['nome'], $_POST['duracao'], $_POST['unidade_id'], $_POST['sessao_id'], $_POST['filme_id'], $_POST['categoria'], $_POST['classificacao']);
     }
 
     // redireciona após criação
