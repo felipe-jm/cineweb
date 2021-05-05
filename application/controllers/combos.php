@@ -38,7 +38,7 @@ class Combos
   {
     // Se tiver dados no POST cria novo combo
     if (isset($_POST['criarCombo'])) {
-      Combo::add($_POST['nome'], $_POST['unidade_id']);
+      Combo::add($_POST['nome'], $_POST['unidade_id'], $_POST['tipo'], $_POST['preco']);
     }
 
     // redireciona após criação
@@ -55,6 +55,8 @@ class Combos
     if (isset($combo_id)) {
       // load combo
       $combo = Combo::get($combo_id);
+      $unidade_id = $combo->unidade_id;
+      $tipo = $combo->tipo;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +76,7 @@ class Combos
   {
     // Se tiver dados no POST cria novo combo
     if (isset($_POST['editarCombo'])) {
-      Combo::update($_POST['nome'], $_POST['unidade_id'],  $_POST['combo_id']);
+      Combo::update($_POST['nome'], $_POST['unidade_id'], $_POST['combo_id'], $_POST['tipo'], $_POST['preco']);
     }
 
     // redireciona após criação
