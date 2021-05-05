@@ -39,7 +39,7 @@ class Funcionario extends Model
     $connection = Connection::getConnection();
     $sql = "INSERT INTO funcionarios (nome, cpf, telefone, unidade_id) VALUES (:nome, :cpf, :telefone, :unidade_id)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':cpf' => $cpf, ':telefone' => $telefone,':unidade_id' => $unidade_id);
+    $parameters = array(':nome' => $nome, ':cpf' => $cpf, ':telefone' => $telefone, ':unidade_id' => $unidade_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -89,9 +89,9 @@ class Funcionario extends Model
   public static function update($nome, $cpf, $telefone, $unidade_id, $funcionario_id)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE funcionarios SET nome = :nome, cpf = :cpf, telefone = :telefone,unidade_id = :unidade_id WHERE id = :funcionario_id";
+    $sql = "UPDATE funcionarios SET nome = :nome, cpf = :cpf, telefone = :telefone, unidade_id = :unidade_id WHERE id = :funcionario_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':cpf' => $cpf, ':telefone' => $telefone,':unidade_id' => $unidade_id, ':funcionario_id' => $funcionario_id);
+    $parameters = array(':nome' => $nome, ':cpf' => $cpf, ':telefone' => $telefone, ':unidade_id' => $unidade_id, ':funcionario_id' => $funcionario_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();

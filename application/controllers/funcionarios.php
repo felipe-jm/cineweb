@@ -38,7 +38,7 @@ class Funcionarios
   {
     // Se tiver dados no POST cria nova funcionario
     if (isset($_POST['criarFuncionario'])) {
-      Funcionario::add($_POST['nome'], $_POST['cpf'], $_POST['unidade_id']);
+      Funcionario::add($_POST['nome'], $_POST['cpf'], $_POST['telefone'], $_POST['unidade_id']);
     }
 
     // redireciona após criação
@@ -55,6 +55,7 @@ class Funcionarios
     if (isset($funcionario_id)) {
       // load funcionario
       $funcionario = Funcionario::get($funcionario_id);
+      $unidade_id = $funcionario->unidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -73,7 +74,7 @@ class Funcionarios
   {
     // Se tiver dados no POST cria nova funcionario
     if (isset($_POST['editarFuncionario'])) {
-      Funcionario::update($_POST['nome'], $_POST['cpf'], $_POST['unidade_id'], $_POST['funcionario_id']);
+      Funcionario::update($_POST['nome'], $_POST['cpf'], $_POST['telefone'], $_POST['unidade_id'], $_POST['funcionario_id']);
     }
 
     // redireciona após criação
@@ -88,7 +89,7 @@ class Funcionarios
   public function deletarFuncionario($funcionario_id)
   {
     if (isset($funcionario_id)) {
-      Filme::delete($funcionario_id);
+      Funcionario::delete($funcionario_id);
     }
 
     header('location: ' . URL_WITH_INDEX_FILE . 'funcionarios/index');
