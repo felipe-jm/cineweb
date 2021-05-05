@@ -83,7 +83,7 @@ class Assentos
     }
 
     // redireciona após criação
-    // header('location: ' . URL_WITH_INDEX_FILE . 'assentos/index');
+    header('location: ' . URL_WITH_INDEX_FILE . 'assentos/index');
   }
 
   /**

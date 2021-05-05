@@ -73,9 +73,6 @@ class Unidades
    */
   public function editarUnidade()
   {
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
     // Se tiver dados no POST cria nova unidade
     if (isset($_POST['editarUnidade'])) {
       Unidade::update($_POST['nome'], $_POST['cidade_id'], $_POST['unidade_id'], $_POST['endereco']);
