@@ -29,15 +29,15 @@ class Cliente extends Model
   }
 
   /**
- * @property string nome
- * @property int unidade_id
- * @property string cpf
- * @property string telefone
- */
+   * @property string nome
+   * @property int unidade_id
+   * @property string cpf
+   * @property string telefone
+   */
   public static function add($nome, $unidade_id, $cpf, $telefone)
   {
     $connection = Connection::getConnection();
-    $sql = "INSERT INTO clientes (nome, unidade_id, cpf, telefone) VALUES (:nome, :unidade_id, cpf, telefone)";
+    $sql = "INSERT INTO clientes (nome, unidade_id, cpf, telefone) VALUES (:nome, :unidade_id, :cpf, :telefone)";
     $query = $connection->prepare($sql);
     $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id, ':cpf' => $cpf, ':telefone' => $telefone);
 
@@ -90,7 +90,7 @@ class Cliente extends Model
   public static function update($nome, $unidade_id, $cliente_id, $cpf, $telefone)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE clientes SET nome = :nome,unidade_id = :unidade_id, cpf = :cpf, telefone = :telefone WHERE id = :cliente_id";
+    $sql = "UPDATE clientes SET nome = :nome, unidade_id = :unidade_id, cpf = :cpf, telefone = :telefone WHERE id = :cliente_id";
     $query = $connection->prepare($sql);
     $parameters = array(':nome' => $nome, ':unidade_id' => $unidade_id, ':cliente_id' => $cliente_id, ':cpf' => $cpf, ':telefone' => $telefone,);
 

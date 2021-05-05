@@ -38,7 +38,7 @@ class Sessoes
   {
     // Se tiver dados no POST cria nova sessao
     if (isset($_POST['criarSessao'])) {
-      Sessao::add($_POST['nome'], $_POST['unidade_id']);
+      Sessao::add($_POST['numero'], $_POST['unidade_id']);
     }
 
     // redireciona após criação
@@ -55,6 +55,7 @@ class Sessoes
     if (isset($sessao_id)) {
       // load sessao
       $sessao = Sessao::get($sessao_id);
+      $unidade_id = $sessao->unidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +75,7 @@ class Sessoes
   {
     // Se tiver dados no POST cria nova sessao
     if (isset($_POST['editarSessao'])) {
-      Sessao::update($_POST['nome'], $_POST['unidade_id'], $_POST['sessao_id']);
+      Sessao::update($_POST['numero'], $_POST['unidade_id'], $_POST['sessao_id']);
     }
 
     // redireciona após criação

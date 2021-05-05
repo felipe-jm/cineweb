@@ -51,21 +51,23 @@ CREATE TABLE IF NOT EXISTS `combos` (
     preco float
 );
 
-CREATE TABLE IF NOT EXISTS `assentos` (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    unidade_id INT(6) UNSIGNED, 
-    cliente_id INT(6) UNSIGNED, 
-    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    numero INT(6) UNSIGNED NOT NULL,
-    disponivel boolean NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS `sessoes` (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     unidade_id INT(6) UNSIGNED, 
     FOREIGN KEY (unidade_id) REFERENCES unidades(id),
     numero int(6) UNSIGNED NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `assentos` (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    unidade_id INT(6) UNSIGNED, 
+    cliente_id INT(6) UNSIGNED, 
+    sessao_id INT(6) UNSIGNED, 
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (sessao_id) REFERENCES sessoes(id),
+    numero INT(6) UNSIGNED NOT NULL,
+    disponivel boolean NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `filmes` (

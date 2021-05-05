@@ -24,7 +24,6 @@
             <a class="btn homeBtn" href="<?php echo URL_WITH_INDEX_FILE; ?>combos">
                 Combos
             </a>
-
             <a class="btn homeBtn" href="<?php echo URL_WITH_INDEX_FILE; ?>clientes">
                 Clientes
             </a>
@@ -33,6 +32,9 @@
             </a>
             <a class="btn homeBtn" href="<?php echo URL_WITH_INDEX_FILE; ?>sessoes">
                 Sessões
+            </a>
+            <a class="btn homeBtn" href="<?php echo URL_WITH_INDEX_FILE; ?>assentos">
+                Assentos
             </a>
         </div>
     </div>

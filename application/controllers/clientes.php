@@ -38,7 +38,7 @@ class Clientes
   {
     // Se tiver dados no POST cria novo cliente
     if (isset($_POST['criarCliente'])) {
-      Cliente::add($_POST['nome'], $_POST['unidade_id']);
+      Cliente::add($_POST['nome'], $_POST['unidade_id'], $_POST['cpf'], $_POST['telefone']);
     }
 
     // redireciona após criação
@@ -55,6 +55,7 @@ class Clientes
     if (isset($cliente_id)) {
       // load cliente
       $cliente = Cliente::get($cliente_id);
+      $unidade_id = $cliente->unidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +75,7 @@ class Clientes
   {
     // Se tiver dados no POST cria novo cliente
     if (isset($_POST['editarCliente'])) {
-      Cliente::update($_POST['nome'], $_POST['unidade_id'], $_POST['cliente_id']);
+      Cliente::update($_POST['nome'], $_POST['unidade_id'], $_POST['cliente_id'],  $_POST['cpf'], $_POST['telefone']);
     }
 
     // redireciona após criação

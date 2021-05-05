@@ -38,7 +38,7 @@ class Comidas
   {
     // Se tiver dados no POST cria nova comida
     if (isset($_POST['criarComida'])) {
-      Comida::add($_POST['nome'], $_POST['unidade_id']);
+      Comida::add($_POST['nome'], $_POST['unidade_id'], $_POST['peso'], $_POST['preco']);
     }
 
     // redireciona após criação
@@ -55,6 +55,7 @@ class Comidas
     if (isset($comida_id)) {
       // load comida
       $comida = Comida::get($comida_id);
+      $unidade_id = $comida->unidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +75,7 @@ class Comidas
   {
     // Se tiver dados no POST cria nova comida
     if (isset($_POST['editarComida'])) {
-      Comida::update($_POST['nome'], $_POST['unidade_id'], $_POST['comida_id']);
+      Comida::update($_POST['nome'], $_POST['unidade_id'], $_POST['comida_id'], $_POST['peso'], $_POST['preco']);
     }
 
     // redireciona após criação

@@ -9,6 +9,7 @@ require_once APP . 'database/connection.php';
  * @property int id
  * @property string nome
  * @property string endereco
+ * @property int cidade_id
  */
 
 class Unidade extends Model

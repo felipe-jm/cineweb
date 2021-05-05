@@ -38,7 +38,7 @@ class Unidades
   {
     // Se tiver dados no POST cria nova unidade
     if (isset($_POST['criarUnidade'])) {
-      Unidade::add($_POST['nome'], $_POST['cidade_id']);
+      Unidade::add($_POST['nome'], $_POST['cidade_id'], $_POST['endereco']);
     }
 
     // redireciona após criação
@@ -55,6 +55,7 @@ class Unidades
     if (isset($unidade_id)) {
       // load unidade
       $unidade = Unidade::get($unidade_id);
+      $cidade_id = $unidade->cidade_id;
 
       // load views
       require APP . 'views/_templates/header.php';
@@ -74,7 +75,7 @@ class Unidades
   {
     // Se tiver dados no POST cria nova unidade
     if (isset($_POST['editarUnidade'])) {
-      Unidade::update($_POST['nome'], $_POST['cidade_id'], $_POST['unidade_id']);
+      Unidade::update($_POST['nome'], $_POST['cidade_id'], $_POST['unidade_id'], $_POST['endereco']);
     }
 
     // redireciona após criação

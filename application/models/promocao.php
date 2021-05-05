@@ -41,7 +41,7 @@ class Promocao extends Model
     $connection = Connection::getConnection();
     $sql = "INSERT INTO promocoes (nome, preco, data_fim, data_inicio, unidade_id) VALUES (:nome, :preco, :data_fim, :data_inicio,:unidade_id)";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':preco' => $preco,':data_fim' => $data_fim, ':data_inicio' => $data_inicio, ':unidade_id' => $unidade_id);
+    $parameters = array(':nome' => $nome, ':preco' => $preco, ':data_fim' => $data_fim, ':data_inicio' => $data_inicio, ':unidade_id' => $unidade_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -88,12 +88,12 @@ class Promocao extends Model
    * @param int $unidade_id
    * @param int $promocao_id
    */
-  public static function update($nome, $data_fim, $data_inicio, $unidade_id, $promocao_id)
+  public static function update($nome, $preco, $data_fim, $data_inicio, $unidade_id, $promocao_id)
   {
     $connection = Connection::getConnection();
-    $sql = "UPDATE promocoes SET nome = :nome, data_fim = :data_fim, data_inicio = :data_inicio, unidade_id = :unidade_id WHERE id = :promocao_id";
+    $sql = "UPDATE promocoes SET nome = :nome, preco = :preco, data_fim = :data_fim, data_inicio = :data_inicio, unidade_id = :unidade_id WHERE id = :promocao_id";
     $query = $connection->prepare($sql);
-    $parameters = array(':nome' => $nome, ':data_fim' => $data_fim, ':data_inicio' => $data_inicio, ':unidade_id' => $unidade_id, ':promocao_id' => $promocao_id);
+    $parameters = array(':nome' => $nome, ':preco' => $preco, ':data_fim' => $data_fim, ':data_inicio' => $data_inicio, ':unidade_id' => $unidade_id, ':promocao_id' => $promocao_id);
 
     // useful for debugging: you can see the SQL behind above construction by using:
     // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();

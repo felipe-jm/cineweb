@@ -38,7 +38,7 @@ class Cidades
   {
     // Se tiver dados no POST cria nova cidade
     if (isset($_POST['criarCidade'])) {
-      Cidade::add($_POST['nome']);
+      Cidade::add($_POST['nome'], $_POST['estado']);
     }
 
     // redireciona após criação
@@ -74,7 +74,7 @@ class Cidades
   {
     // Se tiver dados no POST cria nova cidade
     if (isset($_POST['editarCidade'])) {
-      Cidade::update($_POST['nome'], $_POST['cidade_id']);
+      Cidade::update($_POST['nome'], $_POST['estado'], $_POST['cidade_id']);
     }
 
     // redireciona após criação

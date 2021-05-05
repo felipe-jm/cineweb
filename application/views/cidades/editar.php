@@ -10,11 +10,13 @@
       Nome
       <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($cidade->nome, ENT_QUOTES, 'UTF-8'); ?>">
     </label>
-  <form action="<?php echo URL_WITH_INDEX_FILE; ?>cidades/criarCidade" method="POST">
+
     <label for="estado">
       Estado
       <input id="estado" class="input" type="string" name="estado" required value="<?php echo htmlspecialchars($cidade->estado, ENT_QUOTES, 'UTF-8'); ?>">
     </label>
+
+    <input type="hidden" name="cidade_id" value="<?php echo htmlspecialchars($cidade->id, ENT_QUOTES, 'UTF-8'); ?>" />
 
     <div class="botoes">
       <a class="btn" href="<?php echo URL_WITH_INDEX_FILE; ?>cidades">
