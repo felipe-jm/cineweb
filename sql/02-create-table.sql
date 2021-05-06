@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS `funcionarios`;
 DROP TABLE IF EXISTS `comidas`;
 DROP TABLE IF EXISTS `filmes`;
-DROP TABLE IF EXISTS `sessoes`;
 DROP TABLE IF EXISTS `assentos`;
+DROP TABLE IF EXISTS `sessoes`;
 DROP TABLE IF EXISTS `combos`;
 DROP TABLE IF EXISTS `promocoes`;
 DROP TABLE IF EXISTS `clientes`;
