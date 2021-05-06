@@ -6,7 +6,7 @@ class Cidades
 {
   /**
    * PAGE: index
-   * Este método é acessado ao acessar -> http://localhost/cineweb/index.php/cidades/criar
+   * Este método é acessado ao acessar -> http://localhost/cineweb/index.php/cidades
    */
   public function index()
   {
