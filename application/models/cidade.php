@@ -19,7 +19,7 @@ class Cidade extends Model
   public static function all()
   {
     $connection = Connection::getConnection();
-    $sql = "SELECT id, nome FROM cidades";
+    $sql = "SELECT id, nome, estado FROM cidades";
     $query = $connection->prepare($sql);
     $query->execute();
 

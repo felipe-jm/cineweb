@@ -8,9 +8,18 @@
   <div>
     <table>
       <tbody>
+        <tr style="text-align:left">
+              <th>Nome</th>
+              <th>Duração (Em segundos)</th> 
+              <th style="width:23%">Categoria</th> 
+              <th>Classificação</th> 
+        </tr>
         <?php foreach ($filmes as $filme) { ?>
           <tr>
             <td><?php if (isset($filme->nome)) echo htmlspecialchars($filme->nome, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($filme->duracao)) echo htmlspecialchars($filme->duracao, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($filme->categoria)) echo htmlspecialchars($filme->categoria, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($filme->classificacao)) echo htmlspecialchars($filme->classificacao, ENT_QUOTES, 'UTF-8'); ?></td>
             <td class="acoes">
               <a href="<?php echo URL_WITH_INDEX_FILE . 'filmes/editar/' . htmlspecialchars($filme->id, ENT_QUOTES, 'UTF-8'); ?>">
                 <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">
