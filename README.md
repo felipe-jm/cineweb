@@ -1,6 +1,6 @@
 # Cineweb :movie_camera:
 
-Um sistema gerenciador de cinemas.
+Um sistema gerenciador de franquias de cinemas.
 
 ## Features
 
@@ -28,9 +28,12 @@ git clone https://github.com/felipe-jm/cineweb
 
 Após isso:
 
-1. Entre em [./application/config/config.php](./application/config/config.php)
-2. Defina as configurações do banco de dados
-3. Executa as queries .sql para criação do banco
+- Entre em [./application/config/config.php](./application/config/config.php)
+- Defina as configurações do banco de dados
+- Execute as queries .sql localizadas em [./sql](./sql):
+  1. [./sql/01-create-database.sql](./sql/01-create-database.sql)
+  2. [./sql/02-create-table.sql](./sql/02-create-table.sql)
+  3. [./sql/03-seed-database.sql](./sql/03-seed-database.sql)
 
 > Para visualizar o banco de dados no XAMPP, basta acessar [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
 
