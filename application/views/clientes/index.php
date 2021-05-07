@@ -8,9 +8,16 @@
   <div>
     <table>
       <tbody>
+        <tr style="text-align:left">
+          <th style="width:30%">Nome</th>
+          <th>CPF</th> 
+          <th>Telefone</th> 
+        </tr>
         <?php foreach ($clientes as $cliente) { ?>
           <tr>
             <td><?php if (isset($cliente->nome)) echo htmlspecialchars($cliente->nome, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($cliente->cpf)) echo htmlspecialchars($cliente->cpf, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($cliente->telefone)) echo htmlspecialchars($cliente->telefone, ENT_QUOTES, 'UTF-8'); ?></td>
             <td class="acoes">
               <a href="<?php echo URL_WITH_INDEX_FILE . 'clientes/editar/' . htmlspecialchars($cliente->id, ENT_QUOTES, 'UTF-8'); ?>">
                 <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">

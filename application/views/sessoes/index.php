@@ -8,6 +8,9 @@
   <div>
     <table>
       <tbody>
+        <tr style="text-align:left">
+          <th>Número</th> 
+        </tr>
         <?php foreach ($sessoes as $sessao) { ?>
           <tr>
             <td><?php if (isset($sessao->numero)) echo htmlspecialchars($sessao->numero, ENT_QUOTES, 'UTF-8'); ?></td>

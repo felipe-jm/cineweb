@@ -8,8 +8,13 @@
   <div>
     <table>
       <tbody>
+        <tr style="text-align:left">
+          <th style="width:40%">Número</th>
+          <th>Disponível (1 - Sim/ 0 - Não)</th> 
+        </tr>
         <?php foreach ($assentos as $assento) { ?>
           <tr>
+            <td><?php if (isset($assento->numero)) echo htmlspecialchars($assento->numero, ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?php if (isset($assento->numero)) echo htmlspecialchars($assento->numero, ENT_QUOTES, 'UTF-8'); ?></td>
             <td class="acoes">
               <a href="<?php echo URL_WITH_INDEX_FILE . 'assentos/editar/' . htmlspecialchars($assento->id, ENT_QUOTES, 'UTF-8'); ?>">

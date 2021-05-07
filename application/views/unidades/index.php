@@ -8,9 +8,14 @@
   <div>
     <table>
       <tbody>
+        <tr style="text-align:left">
+          <th style="width:45%">Unidade</th>
+          <th>Endereço</th> 
+        </tr>
         <?php foreach ($unidades as $unidade) { ?>
           <tr>
             <td><?php if (isset($unidade->nome)) echo htmlspecialchars($unidade->nome, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($unidade->endereco)) echo htmlspecialchars($unidade->endereco, ENT_QUOTES, 'UTF-8'); ?></td>
             <td class="acoes">
               <a href="<?php echo URL_WITH_INDEX_FILE . 'unidades/editar/' . htmlspecialchars($unidade->id, ENT_QUOTES, 'UTF-8'); ?>">
                 <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">

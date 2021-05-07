@@ -8,9 +8,14 @@
   <div>
     <table>
       <tbody>
+        <tr style="text-align:left">
+          <th style="width:45%">Nome</th>
+          <th>Estado</th> 
+        </tr>
         <?php foreach ($cidades as $cidade) { ?>
           <tr>
             <td><?php if (isset($cidade->nome)) echo htmlspecialchars($cidade->nome, ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?php if (isset($cidade->estado)) echo htmlspecialchars($cidade->estado, ENT_QUOTES, 'UTF-8'); ?></td>
             <td class="acoes">
               <a href="<?php echo URL_WITH_INDEX_FILE . 'cidades/editar/' . htmlspecialchars($cidade->id, ENT_QUOTES, 'UTF-8'); ?>">
                 <img src="<?php echo URL; ?>public/img/icons/edit.svg" alt="Editar" height="28" width="28">
