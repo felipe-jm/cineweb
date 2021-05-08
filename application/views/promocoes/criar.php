@@ -8,7 +8,7 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>promocoes/criarPromocao" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required>
+      <input id="nome" class="input" type="text" name="nome" required maxlength="200">
     </label>
 
     <label for="data_inicio">

@@ -8,12 +8,12 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>cidades/criarCidade" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required>
+      <input id="nome" maxlength="200" class="input" type="text" name="nome" required>
     </label>
 
     <label for="estado">
       Estado
-      <input id="estado" class="input" type="text" name="estado" required>
+      <input id="estado" maxlength="2" class="input" type="text" name="estado" required style="text-transform: uppercase;">
     </label>
 
     <div class="botoes">

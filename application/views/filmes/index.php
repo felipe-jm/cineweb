@@ -10,7 +10,7 @@
       <tbody>
         <tr style="text-align:left">
               <th>Nome</th>
-              <th>Duração (Em segundos)</th> 
+              <th>Duração</th> 
               <th style="width:23%">Categoria</th> 
               <th>Classificação</th> 
         </tr>

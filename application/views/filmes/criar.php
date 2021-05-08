@@ -8,12 +8,12 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>filmes/criarFilme" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required>
+      <input id="nome" class="input" type="text" name="nome" required maxlength="200">
     </label>
 
     <label for="duracao">
       Duração
-      <input id="duracao" class="input" type="number" name="duracao" required>
+      <input id="duracao" class="input" type="number" name="duracao">
     </label>
 
     <label for="classificacao">
