@@ -8,12 +8,12 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>unidades/editarUnidade" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($unidade->nome, ENT_QUOTES, 'UTF-8'); ?>">
+      <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($unidade->nome, ENT_QUOTES, 'UTF-8'); ?>" maxlength="200">
     </label>
 
     <label for="endereco">
       Endereço
-      <input id="endereco" class="input" type="text" name="endereco" required value="<?php echo htmlspecialchars($unidade->endereco, ENT_QUOTES, 'UTF-8'); ?>">
+      <input id="endereco" class="input" type="text" name="endereco" required value="<?php echo htmlspecialchars($unidade->endereco, ENT_QUOTES, 'UTF-8'); ?>" maxlength="200">
     </label>
 
     <?php require_once APP . '/views/_components/cidadesSelect.php'; ?>

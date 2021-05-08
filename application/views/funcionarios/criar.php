@@ -8,17 +8,17 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>funcionarios/criarFuncionario" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required>
+      <input id="nome" class="input" type="text" name="nome" required maxlength="200">
     </label>
 
     <label for="cpf">
       CPF
-      <input id="cpf" class="input" type="string" name="cpf" required>
+      <input id="cpf" class="input" type="string" name="cpf" required maxlength="11">
     </label>
 
     <label for="telefone">
       Telefone
-      <input id="telefone" class="input" type="string" name="telefone" required>
+      <input id="telefone" class="input" type="string" name="telefone" required maxlength="11">
     </label>
 
     <?php require_once APP . '/views/_components/unidadesSelect.php'; ?>

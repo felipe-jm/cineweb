@@ -8,7 +8,7 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>combos/editarCombo" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($combo->nome, ENT_QUOTES, 'UTF-8'); ?>">
+      <input id="nome" class="input" type="text" name="nome" required value="<?php echo htmlspecialchars($combo->nome, ENT_QUOTES, 'UTF-8'); ?>" maxlength="200">
     </label>
 
     <?php require_once APP . '/views/_components/tiposSelect.php'; ?>

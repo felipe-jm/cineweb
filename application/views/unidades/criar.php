@@ -8,12 +8,12 @@
   <form action="<?php echo URL_WITH_INDEX_FILE; ?>unidades/criarUnidade" method="POST">
     <label for="nome">
       Nome
-      <input id="nome" class="input" type="text" name="nome" required>
+      <input id="nome" class="input" type="text" name="nome" required maxlength="200">
     </label>
 
     <label for="endereco">
       Endereço
-      <input id="endereco" class="input" type="text" name="endereco" required>
+      <input id="endereco" class="input" type="text" name="endereco" required maxlength="200">
     </label>
 
     <?php require_once APP . '/views/_components/cidadesSelect.php'; ?>
