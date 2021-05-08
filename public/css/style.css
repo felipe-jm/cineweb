@@ -81,8 +81,6 @@ a {
   padding: 2rem;
   margin: 0 auto;
 
-  position: relative;
-
   flex: 1 0 auto;
 }
 
@@ -206,10 +204,11 @@ button {
 }
 
 .botoes {
-  position: absolute;
-  right: 50px;
-  bottom: 10px;
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+
+  margin: 2rem 0;
 }
 
 #voltar {
